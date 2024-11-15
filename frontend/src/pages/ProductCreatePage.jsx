@@ -20,7 +20,7 @@ const ProductCreatePage = ({ authToken }) => {
         images.forEach(image => formData.append('images', image));
 
         try {
-            await axios.post('http://localhost:5000/api/cars', formData, {
+            await axios.post('https://car-management-1duu.onrender.com/api/cars', formData, {
                 headers: {
                     Authorization: `Bearer ${authToken}`,
                     'Content-Type': 'multipart/form-data',
