@@ -17,7 +17,7 @@ const ProductListPage = ({ authToken }) => {
 
         const fetchCars = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/cars', {
+                const response = await axios.get('https://car-management-1duu.onrender.com/api/cars', {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
                 setCars(response.data.cars || []); // Set cars or an empty array if no cars exist
