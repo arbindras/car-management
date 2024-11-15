@@ -11,7 +11,7 @@ const ProductDetailPage = ({ authToken }) => {
     useEffect(() => {
         const fetchCarDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/cars/${id}`, {
+                const response = await axios.get(`https://car-management-1duu.onrender.com/api/cars/${id}`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
                 setCar(response.data.car);
@@ -25,7 +25,7 @@ const ProductDetailPage = ({ authToken }) => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/cars/${id}`, {
+            await axios.delete(`https://car-management-1duu.onrender.com/api/cars/${id}`, {
                 headers: { Authorization: `Bearer ${authToken}` },
             });
             navigate('/');
@@ -48,7 +48,7 @@ const ProductDetailPage = ({ authToken }) => {
                             ))}
                         </div>
                     )}
-                    <button onClick={() => navigate(`http://localhost:5000/product/edit/${car._id}`)}>Edit</button>
+                    <button onClick={() => navigate(`https://car-management-1duu.onrender.com/product/edit/${car._id}`)}>Edit</button>
                     <button onClick={handleDelete}>Delete</button>
                 </div>
             ) : (
