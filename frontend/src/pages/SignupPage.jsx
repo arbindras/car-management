@@ -12,7 +12,7 @@ const SignupPage = ({ setAuthToken }) => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/users/register', { email, password, username });
+            const response = await axios.post('https://car-management-1duu.onrender.com/api/users/register', { email, password, username });
             setAuthToken(response.data.token);
             alert('User Created Successfully')
             navigate('/login');
